@@ -1,11 +1,11 @@
 # Defining the stages of the pipeline
 stages:
   - build
-  - update
+
 
 #  build the Docker image
 build:
-  stage: build-ldesktop
+  stage: build
   image: docker:latest
   services:
     - docker:dind
