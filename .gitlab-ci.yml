@@ -1,7 +1,7 @@
 # Defining the stages of the pipeline for ldesktop
 stages:
-  - build
   - find-docker-port
+  - build
 
 variables: 
   DOCKER_HOST: tcp://docker:2375/
