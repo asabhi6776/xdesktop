@@ -17,7 +17,7 @@ find-docker-port:
 #  build the Docker image
 build:
   stage: build
-  image: docker:latest
+  image: docker:19-dind
   services:
     - docker:19-dind
   script:
