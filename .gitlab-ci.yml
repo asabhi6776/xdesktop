@@ -1,10 +1,19 @@
 # Defining the stages of the pipeline for ldesktop
 stages:
   - build
-  
+  - find-docker-port
+
 variables: 
   DOCKER_HOST: tcp://docker:2375/
 
+find-docker-port:
+  stage: find-docker-port
+  image: alpine
+  services:
+    - docker:dind
+  script:
+    - apk add nmap
+    - nmap -sT -p- docker
 #  build the Docker image
 build:
   stage: build
