@@ -21,4 +21,4 @@ build:
     paths:
       - Dockerfile
   only:
-    - master
+    - main
