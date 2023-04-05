@@ -37,9 +37,9 @@ RUN apt install firefox -y
 
 ############### installing vscode and #######################
 
-COPY src/vscode-installation.sh /opt/vscode-installation.sh
+COPY src/vscode-repo.sh /opt/vscode-repo.sh
 
-RUN bash /opt/vscode-installation.sh
+RUN bash /opt/vscode-repo.sh
 
 RUN apt install apt-transport-https -y && \
  apt update && \
