@@ -8,7 +8,7 @@ build:
   stage: build
   image: docker:latest
   services:
-    - docker:dind
+    - docker:19-dind
   script:
     - IMAGE_TAG=$(date +%Y%m%d%H%M%S)
     - docker build -t ldesktop:latest -t ldesktop:$IMAGE_TAG .
