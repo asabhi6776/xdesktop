@@ -1,0 +1,13 @@
+version: '3'
+services:
+  vdi:
+    container_name: vdi_app
+    restart: always
+    image: gitlab.bangalore2.com:5050/tech/ldesktop:latest
+    ports:
+      - 5901:5901
+      - 6080:6080
+    volumes:
+      - ./projects:/home/netzary/projects
+    mem_limit: "1g"
+    cpus: 1
