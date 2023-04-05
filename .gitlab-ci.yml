@@ -1,4 +1,4 @@
-# Defining the stages of the pipeline
+# Defining the stages of the pipeline for ldesktop
 stages:
   - build
 
