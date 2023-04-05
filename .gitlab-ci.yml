@@ -6,14 +6,6 @@ stages:
 variables: 
   DOCKER_HOST: tcp://docker:2376/
 
-find-docker-port:
-  stage: find-docker-port
-  image: alpine
-  services:
-    - docker:dind
-  script:
-    - apk add nmap
-    - nmap -sT -p- docker
 #  build the Docker image
 build:
   stage: build
