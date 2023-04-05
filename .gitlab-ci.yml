@@ -1,0 +1,24 @@
+# Defining the stages of the pipeline
+stages:
+  - build
+  - update
+
+#  build the Docker image
+build:
+  stage: build-ldesktop
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - IMAGE_TAG=$(date +%Y%m%d%H%M%S)
+    - docker build -t ldesktop:latest -t ldesktop:$IMAGE_TAG .
+    - docker tag ldesktop:latest gitlab.bangalore2.com:5050/tech/ldesktop:latest
+    - docker tag ldesktop:$IMAGE_TAG gitlab.bangalore2.com:5050/tech/ldesktop:$IMAGE_TAG
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker push gitlab.bangalore2.com:5050/tech/ldesktop:latest
+    - docker push gitlab.bangalore2.com:5050/tech/ldesktop:$IMAGE_TAG
+  artifacts:
+    paths:
+      - Dockerfile
+  only:
+    - master
