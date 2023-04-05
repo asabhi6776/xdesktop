@@ -5,8 +5,8 @@ lDesktop is a VDI solution which runs Ubuntu GUI in docker containing all the re
 ## Usage/Examples
 
 ```bash
-git clone git@gitlab.bangalore2.com:tech/ldesktop.git
-cd ldesktop
+git clone https://github.com/asabhi6776/xdesktop.git
+cd xdesktop
 docker run -it -d --privileged -p 6080:6080 gitlabe.bangalore2.com/tech/ldesktop:latest
 ```
 
