@@ -3,6 +3,7 @@ services:
   vdi:
     container_name: vdi_app
     restart: always
+    privileged: true
     image: asabhi6776/xdesktop:latest
     ports:
       - 5901:5901
