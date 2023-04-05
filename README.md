@@ -1,4 +1,3 @@
-
 # lDesktop
 
 lDesktop is a VDI solution which runs Ubuntu GUI in docker containing all the required tools fro java and python development.
@@ -38,6 +37,7 @@ Contributions are always welcome!
 ## Authors
 
 - [@asabhi6776](https://www.github.com/asabhi6776)
+- [@yogeshgowdagr](https://github.com/yogeshgowdagr)
 
 
 ## License
