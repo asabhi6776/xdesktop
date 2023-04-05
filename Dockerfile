@@ -10,21 +10,18 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 ################# bg update ###################
 
-# RUN apt install xwallpaper -y
-
 COPY assets/newbg.png /usr/share/backgrounds/xfce/xfce-verticals.png
 
-# RUN xwallpaper --zoom /usr/share/backgrounds/bg_default.png
 ################ adding user #################
 
-RUN useradd -ms /bin/bash abhishek
-RUN echo 'abhishek:mypassword' | chpasswd
+RUN useradd -ms /bin/bash netzary
+RUN echo 'netzary:mypassword' | chpasswd
 
 ################ adding sudo permission ###################
 
 RUN apt-get update \
     && apt-get install -y sudo \
-    && echo 'abhishek ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers \
+    && echo 'netzary ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers \
     && rm -rf /var/lib/apt/list/*
 
 ################## depriortize snapd in firefox ###################
@@ -52,14 +49,15 @@ RUN apt install apt-transport-https -y && \
 ################ install few custom tools ####################
 RUN apt install curl python3 python3-pip python3-cairo alacarte -y
 
-# RUN systemctl enable snapd
+RUN apt install git tmux language-pack-en vim nano -y
 
-USER abhishek
-WORKDIR /home/abhishek
+
+USER netzary
+WORKDIR /home/netzary
 
 RUN mkdir .vnc
 
-RUN echo "password" | vncpasswd -f > ~/.vnc/passwd && \
+RUN echo "netvdidemo" | vncpasswd -f > ~/.vnc/passwd && \
     chmod 0600 ~/.vnc/passwd
 
 RUN echo "#!/bin/bash\n\nxrdb ~/.Xresources\nstartxfce4 &\n" > ~/.vnc/xstartup && \
