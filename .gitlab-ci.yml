@@ -89,6 +89,5 @@ deploy:
   script:
   # try to connect to server
   - ssh netzary@101.53.133.216
-  - cd ~/testing/ldesktop/
-  - docker-compose -f pull 
-  - docker-compose up -d
+  - docker-compose -f /home/netzary/testing/ldesktop pull 
+  - docker-compose -f /home/netzary/testing/ldesktop up -d
