@@ -1,7 +1,9 @@
 # Defining the stages of the pipeline for ldesktop
 stages:
   - build
-
+  
+variables: 
+  DOCKER_HOST: tcp://docker:2375/
 
 #  build the Docker image
 build:
