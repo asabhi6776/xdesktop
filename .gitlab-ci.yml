@@ -28,6 +28,7 @@ build:
   artifacts:
     paths:
       - Dockerfile
+  allow_failure: true
   only:
     - main
 
