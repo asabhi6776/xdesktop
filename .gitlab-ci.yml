@@ -4,7 +4,7 @@ stages:
   - build
 
 variables: 
-  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_HOST: tcp://docker:2376/
 
 find-docker-port:
   stage: find-docker-port
