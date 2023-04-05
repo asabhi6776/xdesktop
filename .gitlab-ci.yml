@@ -89,8 +89,6 @@ deploy:
   script:
   # try to connect to server
   - ssh netzary@101.53.133.216
-
-  # try to clone yourself. A *PUBLIC* key paired to the SSH_PRIVATE_KEY was added as deploy key to this repository
-  - cd /home/netzary/testing/ldesktop
-  - docker-compose pull 
+  - cd ~/testing/ldesktop/
+  - docker-compose -f pull 
   - docker-compose up -d
