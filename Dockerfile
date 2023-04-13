@@ -51,6 +51,10 @@ RUN apt install curl python3 python3-pip python3-cairo alacarte -y
 
 RUN apt install git tmux language-pack-en vim nano -y
 
+RUN add-apt-repository ppa:mmk2410/intellij-idea -y
+RUN apt update && apt install -y openjdk-18-jre && apt install intellij-idea-community -y
+
+
 
 USER abhishek
 WORKDIR /home/abhishek
