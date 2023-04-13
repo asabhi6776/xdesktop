@@ -1,13 +1,13 @@
-# lDesktop
+# Xdesktop
 
-lDesktop is a VDI solution which runs Ubuntu GUI in docker containing all the required tools fro java and python development.
+Xdesktop is a VDI solution which runs Ubuntu GUI in docker containing all the required tools fro java and python development.
 
 ## Usage/Examples
 
 ```bash
 git clone https://github.com/asabhi6776/xdesktop.git
 cd xdesktop
-docker run -it -d --privileged -p 6080:6080 gitlabe.bangalore2.com/tech/ldesktop:latest
+docker-compose up -d
 ```
 
 
@@ -43,4 +43,6 @@ Contributions are always welcome!
 ## License
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A4K7BAG)
 
