@@ -24,6 +24,15 @@ RUN apt-get update \
     && echo 'abhishek ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers \
     && rm -rf /var/lib/apt/list/*
 
+################ Installing audio drivers #######################
+
+RUN apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        alsa-base \
+        alsa-utils \
+        libsndfile1-dev
+
+
 ################## depriortize snapd in firefox ###################
 RUN apt install software-properties-common -y
 

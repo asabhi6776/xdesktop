@@ -4,11 +4,11 @@ services:
     container_name: vdi_app
     restart: always
     privileged: true
-    image: asabhi6776/xdesktop:latest
+    image: asabhi6776/xdesktop:audio_update-1.1
     ports:
       - 5901:5901
       - 6080:6080
     volumes:
       - ./projects:/home/abhishek/Desktop/projects
-    mem_limit: "4g"
-    cpus: 2
+    devices:
+      - /dev/snd:/dev/snd
