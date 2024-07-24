@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:24.04
 LABEL maintainer="github.com/asabhi6776"
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -43,8 +43,8 @@ COPY src/vscode-repo.sh /opt/vscode-repo.sh
 RUN bash /opt/vscode-repo.sh
 
 RUN apt install apt-transport-https -y && \
- apt update && \
- apt install code -y
+    apt update && \
+    apt install code -y
 
 
 ################ install few custom tools ####################
@@ -52,7 +52,7 @@ RUN apt install apt-transport-https -y && \
 RUN apt install curl python3 python3-pip python3-cairo alacarte -y
 RUN apt install git tmux language-pack-en vim nano -y
 RUN add-apt-repository ppa:mmk2410/intellij-idea -y
-RUN apt update && apt install -y openjdk-18-jre && apt install intellij-idea-community -y
+RUN apt update && apt install -y openjdk-21-jre && apt install intellij-idea-community -y
 
 
 
@@ -62,7 +62,7 @@ WORKDIR /home/abhishek
 RUN mkdir .vnc
 RUN echo "password" | vncpasswd -f > ~/.vnc/passwd && \
     chmod 0600 ~/.vnc/passwd
-    
+
 RUN echo "#!/bin/bash\n\nxrdb ~/.Xresources\nstartxfce4 &\n" > ~/.vnc/xstartup && \
     chmod +x ~/.vnc/xstartup
 

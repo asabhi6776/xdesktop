@@ -16,7 +16,7 @@ commands:
 jobs:
   build:
     machine:
-      image: ubuntu-2004:202010-01
+      image: ubuntu-2204:2024.05.1
     steps:
       - setup
       - run:
@@ -32,3 +32,4 @@ workflows:
   build-and-push-multi-arch-image:
     jobs:
       - build
+
